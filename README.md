@@ -226,4 +226,5 @@ def add_admin_to_team_and_channel(team_id, channel_id):
 
 Bu proje, iki farklı platform arasında sorunsuz bir veri aktarımı sağlar. Discord’daki kullanıcılar, mesajlar ve kanallar başarılı bir şekilde Mattermost’a taşınır. Çalışma ortamlarının birleştirilmesi gereken durumlar için güçlü bir çözüm sunar.
 
-# Takıldığınız veya yapamadığınız bir durumda bana linkedin üzerinden ulaşabilirsiniz. https://www.linkedin.com/in/murat-gen%C3%A7-775745b5/
+# Takıldığınız veya yapamadığınız bir durumda bana linkedin üzerinden ulaşabilirsiniz. 
+https://www.linkedin.com/in/murat-gen%C3%A7-775745b5/
