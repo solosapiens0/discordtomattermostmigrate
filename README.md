@@ -180,6 +180,7 @@ Bot artık sunucuna eklenmiş olacak.
 ## Mattermost Token
 
 Sistem Panosu > Bütünleştirmeler > Bütünleştirme Yönetimi > Kişisel erişim kodları kullanılsın > Doğru
+
 Profil > Güvenlik > Kişisel Erişim kodları > Ekle
 
 Kod açıklaması: test
