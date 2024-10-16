@@ -188,9 +188,9 @@ Kod kimliği: mffdfds5d3mc6ypeioo7o
 Erişim kodu: dsfdsfzurpfdsfds9ni7igoaorra4h
 Projemizde **Erişim kodu** değerini kullanacağız.
 
-Aktarımın düzgün çalışması için bir çok denemeler yaptım. Sonuç olarak şöyle bir yola başvurmam gerekti. Discorddaki tüm kullanıcılara ait mesajları mattermosta senkronize ederken çok fazla hata aldım. Bu hataları çözmek için mattermosttaki tüm kullanıcıları aktarım bitene kadar sistem yöneticisi rolüne çektim. Sizde hatasız bir kurulum için bunu yapmayı unutmayın. Ek olarak Sistem Yöneticisi > Kimlik Doğrulama > E-Posta > E-posta doğrulaması istensin bu ayarı aktarım bitene kadar kapatın.
+Aktarımın düzgün çalışması için bir çok denemeler yaptım. Sonuç olarak şöyle bir yola başvurmam gerekti. Discorddaki tüm kullanıcılara ait mesajları mattermosta senkronize ederken çok fazla hata ile karşılaştım. Bu hataları çözmek için mattermosttaki tüm kullanıcıları aktarım bitene kadar sistem yöneticisi rolüne çektim. Sizde hatasız bir kurulum için bunu yapmayı unutmayın. Ek olarak Sistem Yöneticisi > Kimlik Doğrulama > E-Posta > E-posta doğrulaması istensin bu ayarı aktarım bitene kadar kapatın.
 
-## Discotd Mesajlarının Mattermostta doğru kişiye atanması.
+## Discord Mesajlarının Mattermostta doğru kişiye atanması.
 
 Bu işlem için mattermosttaki tüm kullanıcılara token oluşturmalısınız. Mantık şu; main.py de mesajlari içeri aktarılırken kullanıcıların tokenlarından oturum açıp mesajları onlar gönderiyormuş gibi mesjaları içeri aktarıyor. Oluşturduğunuz tokenları da main.py de aşağıda alana yerleştirin.
 
