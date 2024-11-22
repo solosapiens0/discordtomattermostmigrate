@@ -107,7 +107,96 @@ exit
 ## Restart Docker containers
 docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml down
 docker compose -f docker-compose.yml -f docker-compose.without-nginx.yml up -d
+
+## Bonus
+
+## Total number of messages in unarchived teams:
+
+SELECT COUNT(*) AS TotalMessages FROM Posts WHERE ChannelId IN (SELECT Id FROM Channels WHERE DeleteAt = 0 AND TeamId IN (SELECT Id FROM Teams WHERE DeleteAt = 0));
+
+## Total number of messages in Mattermost
+
+SELECT COUNT(*) AS TotalMessages FROM Posts;
+
 ```
+
+---
+
+## Running the Project
+
+### Discord API
+
+#### Access the Discord Developer Portal
+First, you need to access the Discord Developer Portal:
+
+1. Navigate to the [Discord Developer Portal](https://discord.com/developers/applications).
+
+#### Create a New Application
+1. Log in to the Discord Developer Portal.
+2. Click the “New Application” button, located at the top-right corner of the page.
+3. Name your application and click “Create” (this will also serve as the bot's name, which can be changed later).
+
+You now have a new Discord application and can proceed to add the bot.
+
+#### Create a Bot
+1. In the left menu, select the “Bot” tab.
+2. Click “Add Bot” and confirm.
+    - This will add a bot to your application, allowing it to interact in Discord servers.
+
+#### Retrieve the Bot Token
+Once the bot is created, its token will be accessible. This token enables the bot to interact with the Discord API. **Keep this token secure and do not share it with anyone.**
+
+1. Click “Click to Reveal Token” to copy your bot token.
+2. This token allows the bot to access Discord servers, send messages, and perform other actions.
+3. If your token is accidentally exposed, immediately regenerate it by clicking the “Regenerate” button in the Developer Portal.
+
+#### OAuth2 and Adding the Bot to a Server
+To add the bot to your server, use OAuth2 authorization:
+
+1. Navigate to the OAuth2 section in the left menu.
+2. Click on the “OAuth2 URL Generator.”
+3. Under Scopes, check the “bot” option.
+4. Under Bot Permissions, select the permissions your bot needs, such as:
+    - “Send Messages”
+    - “Manage Channels”
+    - “Manage Messages”
+
+   If your bot only needs to send and receive messages, select the minimum required permissions.
+
+5. At the bottom, a URL will be generated. Copy this URL and open it in your browser.
+6. Select the server where you want to add the bot and authorize it.
+
+The bot will now be added to your server.
+
+---
+
+### Mattermost Token
+
+To enable Mattermost integration, you need to generate personal access tokens.
+
+1. Navigate to:
+   - **System Console** > **Integrations** > **Integration Management** > Enable **Personal Access Tokens**.
+2. Go to:
+   - **Profile** > **Security** > **Personal Access Tokens** > Click “Create.”
+
+Provide the following details:
+- Token description: `test`
+- Token ID: `mffdfds5d3mc6ypeioo7o`
+- Access token: `dsfdsfzurpfdsfds9ni7igoaorra4h`
+
+You will use this **Access Token** value in your project.
+
+---
+
+### Recommendations for a Smooth Migration
+
+During the migration, several issues were encountered when synchronizing messages from Discord to Mattermost. To resolve these issues, follow these steps:
+
+1. Temporarily assign the **System Administrator** role to all Mattermost users during the migration process.
+2. Disable email verification by navigating to:
+   - **System Console** > **Authentication** > **Email Settings** > Uncheck “Require Email Verification.”
+
+This ensures a smoother migration without user or message conflicts.
 
 ---
 
